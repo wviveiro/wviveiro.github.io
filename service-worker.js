@@ -23,6 +23,7 @@ self.addEventListener('message', (event) => {
   }
 });
 
+
 workbox.core.clientsClaim();
 
 /**
