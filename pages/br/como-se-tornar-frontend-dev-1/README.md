@@ -8,9 +8,13 @@
 
 ## O que é Front End?
 
-O desenvolvimento WEB é feito em camadas. A camada mais próxima ao usuário é chamada de **Front End**. Tudo que o usuário visualiza e interage ao abrir um site é considerado front end. A camada mais distante do usuário é chamada de **Back End** e é responsável por controlar dados e regras de negócio do sistema. Permissões para salvar e manipular dados são feitas pelo o back end.
 
-Este curso tem como objetivo ensinar como desenvolver na área mais próxima do usuário, que é o **Front End**. No fim dessa aula, você será capaz de abrir uma página que você criou no seu Browser.
+Tudo aquilo que você pode ver ao acessar um website (por exemplo https://google.com.br) é considerado **Front end**. Imagens, textos, botões, até mesmo vídeos são alguns dos componentes que conseguimos manipular em um website quando aprendemos a desenvolver front end.
+
+O Front End é uma combinação de códigos e arquivos no qual o nosso Broswer (Google Chrome, Firefox, etc) é capaz de interpretar e trazer um resultado amigável à quem está acessando o nosso site.
+
+
+Do outro lado do desenvolvimento web, existe o **Back End**, responsável por controlar dados, regras de negócios e permissões. Para muitos, o back end ainda é considerado mais complexo que o front end. Hoje em dia, não é preciso ter um conhecimento muito elevado em back end para construir um website. Nesse curso, aprenderemos a fazer sites estáticos *from scratch* totalmente em front end.
 
 ## Requerimentos para Desenvolvimento Front End
 
@@ -32,11 +36,31 @@ Browser é a ferramenta que você utiliza para acessar sites da internet. Você 
 
 Um bloco de notas seria o suficiente para começar a produzir seus códigos. Hoje em dia existem ferramentas que ajudam muito no desenvolvimento web e elas deveriam ser utilizadas para te ajudar a entender e produzir códigos.
 
-A ferramenta que eu indico e uso é o [Visual Studio Code](https://code.visualstudio.com/)
+A ferramenta que eu indico e uso é o [Visual Studio Code](https://code.visualstudio.com/). O Visual Studio Code (VS Code) é uma ferramenta de edição de código que nos ajuda na hora de criar nossos arquivos. O VS Code muda as cores do que está escrito no arquivo para nos ajudar a entender o nosso código visualmente.
 
 ## Criando a primeira página
 
-Abra o seu VS Code (Visual Studio Code) e clique em Novo Arquivo (New File). Dentro desse arquivo digite:
+
+A primeira coisa que precisamos entender para desenvolver um site é o HTML. HTML é uma linguagem de marcação. Nós marcamos os conteúdos do nosso arquivo para que o Broswer saiba o que fazer com o conteúdo marcado. Essas marcações são chamadas de `tags`. Cada `tag` produz um efeito diferente para o Browser. Por Exemplo, para criarmos um texto de cabeçalho principal no nosso site, utilizamos da tag `h1`. Essa tag fará com que o conteúdo marcado por ela seja considerado um cabeçalho principal:
+
+```html
+<h1>Meu Primeiro Site</h1>
+```
+
+Como podemos ver no exemplo acima, o texto **Meu Primeiro Site** está entre as marcações `<h1>` e `</h1>`. A marcação `<h1>` significa que tudo depois dela será considerado o cabeçalho principal, por outro lado, a marcação `</h1>` significa que ali é o fim do meu cabeçalho principal. Ou seja, uma tag se inicia pelos sinais `<>` e terminal com os sinais `</>`. Existems diversar tags HTML. Nesse curso aprenderemos a utilizar as principais delas.
+
+
+Todo arquivo HTML precisa ser salvo com a extensão `.html` ou `.htm`. Abra o seu editor de código e crie um novo arquivo. Salve esse arquivo em uma nova pasta como `aula01.html`:
+
+![salvar arquivo como aula01.html](/pages/br/como-se-tornar-frontend-dev-1/img001.png)
+
+
+Se estiver utilizando VS Code, notará que o programa automaticamente entendeu que o arquivo se trata de um arquivo `html`:
+
+![VS Code automaticamente entende arquivo HTML](/pages/br/como-se-tornar-frontend-dev-1/img002.png)
+
+
+Dentro do arquivo digite:
 
 ```html
 <html>
@@ -44,44 +68,48 @@ Abra o seu VS Code (Visual Studio Code) e clique em Novo Arquivo (New File). Den
 </html>
 ```
 
-Os sinais `<html>` e `</html>` são chamados de tags. Existem diversos tipos de tags, sendo a tag `html` a principal para que o Browser entender que esse arquivo é um arquivo HTML. Todo o código que iremos criar será criado entre essas tags, assim mostrando ao browser que tudo ali dentro tem que ser tradado como código HTML. salve o arquivo como `aula01.html` em uma nova pasta. Ao salvar o arquivo com extensão `.html`, o seu VS Code mudará a cor das tags para te ajudar a visualizar o código HTML da sua página.
-
-Edite o seu arquivo `aula01.html` e adicione as seguintes tags dentro da tag `html`:
+A marcação principal de um arquivo HTML é a tag `html`. Todo arquivo HTML precisa iniciar e finalizar com essa marcação. Agora adicionaremos o **corpo** do nosso arquivo.
 
 ```html
 <html>
-    <head>
+<body>
 
-    </head>
+</body>
+</html>
+```
+
+Como podemos ver no *snippet* acima, adicionamos a marcação `body` dentro da marcação `html`. Para o computador, isso faz sentido, porém após diversas linhas criadas o código pode ficar confuso para uma pessoa que está trabalhando nele. Por essa razão, nós criamos a **indentação**:
+
+```html
+<html>
     <body>
-
+        
     </body>
 </html>
 ```
 
-Nós adicionamos as tags `head` e `body` dentro da tag `<html>` e `</html>`. logo, a nossa tag `html` tem dois **filhos**, `head` e `body`. Para ajudar na visualização do que é tag pai e tag filho, nós **indentamos** o código. Indentar é o processo de adicionar espaços antes de iniciar e finalizar uma tag, para sabermos que essas tags estão dentro de uma tag pai. Como vocês podem ver, existe um espaço entre o começo do arquivo e as tags `<head>`, `</head>`, `<body>` e `</body>`. Por cause disso, sabemos que essas tags estão dentro da tag `<html>`. Para o Browser, a indentação é irrelevante, pois ele entende que as tags `head` e `body` estão dentro do `html` devido á eles estarem entre a abertura de tag `<html>` e o fechamento de tag `</html>`.
+Veja que a tag `body` agora está mais para a frente que a tag `html`. Dessa forma o código fica visualmente mais fácil para nós. Essa técnica é chamada de **indentação** e também é utilizada em linguagens de programação para facilitar o entendimento humano. Sempre **indente** as marcações internas do seu código para mantê-los organizados.
 
 
-A tag `head` é aonde colocamos o cabeçalho do código HTML. O cabeçalho serve para configurar o arquivo HTML. dentro dele é adicionado outros arquivos para enriquecer nossa página, como arquivos **javascript** e **css**. Explicarei mais sobre esses arquivos mais para frente.
+A tag `body` é o **corpo** do arquivo HTML. Todo o conteúdo que iremos mostrar para os nossos usuários ficará dentro da tag `body`.
 
-A tag `body` é o corpo do HTML. Tudo que você quer mostrar para o usuário estará dentro dessa tag. Então para exemplificar o que eu estou querendo dizer, faremos a seguinte modificação
 
 ```html
 <html>
-    <head>
-
-    </head>
     <body>
         Olá Mundo!
     </body>
 </html>
 ```
 
-Nós adicionamos o texto "Olá Mundo!" dentro da tag `body`. Como vocês notaram, o texto "Olá Mundo!" não é uma tag pois não estrá entre a estruture `<>`. Vamos abrir nosso arquivo no Browser agora. Vá para a pasta que você salvou o arquivo `aula01.html`. Clique com o botão direito no arquivo `aula01.html` e selecione **Abrir com > Google Chrome** ou outro browser que você estiver utilizando.
+Nós adicionamos o conteúdo *Olá Mundo!* dentro da tag `body`. Como podemos notar, o conteúdo não está entre as marcações `<>`, isso significa que esse é um conteúdo que tem que ser mostrado na página ao acessar o nosso arquivo através de um Browser.
 
-Você acabou de criar a sua primeira página HTML. como você pode ver, o Browser está mostrando apenas o conteúdo "Olá Mundo" na página. Isso é por que o Browser entende que o resto do código são marcações HTML e não devem ser mostradas ao usuário.
+Agora vamos ver o resultado do nosso código acima. Abra a pasta no qual salvou o arquivo `aula01.html`, clique com o botão direito no arquivo e selecione `Abrir Com > Google Chrome` (Ou outro Browser que esteja utilizando).
 
-Na próxima aula, ensinarei como construir mais componentes no seu arquivo HTML
+![Abra o arquivo no Browser](/pages/br/como-se-tornar-frontend-dev-1/img003.png)
 
+Note que as tags HTML não serão mostradas pelo Browser, porém o nosso conteúdo *Olá Mundo!* estará visível, afinal é ele quem está inserido dentro da tag `body`.
 
+![Resultado da Aula 01](/pages/br/como-se-tornar-frontend-dev-1/img004.png)
 
+Pronto, você acabou de criar sua primeira página HTML! Na próxima aula, aprenderemos outras marcações e estruturas HTML para que nosso projeto comece a tomar forma!
